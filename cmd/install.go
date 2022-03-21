@@ -125,12 +125,12 @@ func installTektonPipelines(namespace string) {
 
 func createNamespace(namespace string) {
 	topCommand := "kubectl"
-	// arg0 := "create"
-	// arg1 := "namespace"
-	// arg2 := namespace
-	temp := "version"
+	arg0 := "create"
+	arg1 := "namespace"
+	arg2 := namespace
+	// temp := "version"
 
-	cmd := exec.Command(topCommand, temp)
+	cmd := exec.Command(topCommand, arg0, arg1, arg2)
 	_, err := cmd.Output()
 	if err != nil {
 		fmt.Println(err)
